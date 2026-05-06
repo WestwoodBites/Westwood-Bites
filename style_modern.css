@@ -11,6 +11,27 @@
     --muted: #b0b0b0;
     --shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
     --radius: 24px;
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --bg-accent: #2a2a2a;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --text-muted: #808080;
+    --accent-gold: #d4af37;
+    --accent-gold-light: #f4e87c;
+    --accent-gold-dark: #b8941f;
+    --border-color: rgba(212, 175, 55, 0.2);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.25);
+    --shadow-strong: 0 16px 64px rgba(0, 0, 0, 0.4);
+    --radius-small: 8px;
+    --radius-medium: 16px;
+    --radius-large: 24px;
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
 }
 * {
     margin: 0;
@@ -28,6 +49,8 @@ body {
     overflow-x: hidden;
     opacity: 0;
     transition: opacity 0.5s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 img, video {
     max-width: 100%;
@@ -52,13 +75,58 @@ button, .btn {
     color: var(--accent);
     margin-bottom: 1rem;
 }
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--text-primary);
+}
+
+h1 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: clamp(2.25rem, 4vw, 3.5rem);
+    font-weight: 500;
+}
+
+h3 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 500;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+h5 {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+h6 {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     padding: 1rem 2rem;
-    border-radius: 999px;
+    border-radius: var(--radius-large);
     cursor: pointer;
     transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
     text-decoration: none;
