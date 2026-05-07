@@ -427,6 +427,14 @@ p {
     border-radius: 20px 20px 0 0;
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
     animation: slideUp 1.5s ease-out 0.8s both;
+    .about-card-overlap {
+    /* 保持你原有的代码不变 */
+    position: absolute;
+    bottom: 0;
+    
+    /* 添加这一行：确保它在流式布局中也有间距感 */
+    margin-top: 100px; 
+}
 }
 
 .about-centered {
@@ -1123,4 +1131,15 @@ p {
         grid-template-columns: 1fr;
         text-align: center;
     }
+    /* 针对你目前的代码结构 */
+.hero-overlap {
+    padding-top: 100px; /* 数值取决于你导航栏的实际高度 */
+}
+
+/* 如果是移动端，可能需要更大的间距 */
+@media (max-width: 768px) {
+    .hero-overlap {
+        padding-top: 120px;
+    }
+}
 }
