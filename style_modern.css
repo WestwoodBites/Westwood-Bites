@@ -1158,4 +1158,8 @@ p {
         padding-top: 12px;
     }
 }
+    .about-card-overlap {
+    /* 在上面的基础上增加 */
+    margin-top: 100000000px; /* 数值越大，露出的背景越多 */
+}
 }
