@@ -1,34 +1,34 @@
-/* Sophisticated Modernity restaurant website styles */
+/* Immersive Black & Gold Restaurant Experience */
 :root {
     color-scheme: dark;
-    --bg: #050505;
-    --surface: rgba(20, 20, 20, 0.92);
-    --panel: rgba(255, 255, 255, 0.05);
-    --border: rgba(255, 255, 255, 0.08);
+    --bg: #000000;
+    --surface: rgba(0, 0, 0, 0.95);
+    --panel: rgba(0, 0, 0, 0.08);
+    --border: rgba(212, 175, 55, 0.15);
     --accent: #d4af37;
-    --accent-soft: rgba(212, 175, 55, 0.18);
-    --text: #f2f2f2;
-    --muted: #b0b0b0;
-    --shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
-    --radius: 24px;
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #1a1a1a;
-    --bg-accent: #2a2a2a;
+    --accent-soft: rgba(212, 175, 55, 0.1);
+    --text: #ffffff;
+    --muted: #cccccc;
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    --radius: 16px;
+    --bg-primary: #000000;
+    --bg-secondary: #0a0a0a;
+    --bg-accent: #1a1a1a;
     --text-primary: #ffffff;
-    --text-secondary: #b0b0b0;
-    --text-muted: #808080;
+    --text-secondary: #e0e0e0;
+    --text-muted: #aaaaaa;
     --accent-gold: #d4af37;
     --accent-gold-light: #f4e87c;
     --accent-gold-dark: #b8941f;
     --border-color: rgba(212, 175, 55, 0.2);
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.15);
-    --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.25);
-    --shadow-strong: 0 16px 64px rgba(0, 0, 0, 0.4);
+    --glass-bg: rgba(0, 0, 0, 0.05);
+    --glass-border: rgba(212, 175, 55, 0.1);
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.2);
+    --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-strong: 0 16px 64px rgba(0, 0, 0, 0.5);
     --radius-small: 8px;
-    --radius-medium: 16px;
-    --radius-large: 24px;
+    --radius-medium: 12px;
+    --radius-large: 16px;
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
@@ -44,13 +44,14 @@ html {
 body {
     min-height: 100vh;
     font-family: 'Inter', sans-serif;
-    background: radial-gradient(circle at top, rgba(212,175,55,0.06), transparent 28%), linear-gradient(180deg, #050505 0%, #090909 100%);
+    background: #000000;
     color: var(--text);
     overflow-x: hidden;
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.8s ease;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
 }
 img, video {
     max-width: 100%;
@@ -76,31 +77,41 @@ button, .btn {
     margin-bottom: 1rem;
 }
 
-/* ===== TYPOGRAPHY ===== */
+/* ===== LUXURIOUS TYPOGRAPHY ===== */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 400;
     line-height: 1.2;
     color: var(--text-primary);
-    letter-spacing: -0.015em;
+    letter-spacing: -0.02em;
 }
 
 h1 {
-    font-size: clamp(3.5rem, 7vw, 5.5rem);
+    font-size: clamp(4rem, 8vw, 6.5rem);
     font-weight: 700;
-    letter-spacing: -0.03em;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+    letter-spacing: -0.04em;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
 }
 
 h2 {
-    font-size: clamp(2.5rem, 4.5vw, 3.8rem);
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
     font-weight: 600;
     letter-spacing: -0.02em;
 }
 
-h3 {
-    font-size: clamp(1.85rem, 3.2vw, 2.6rem);
-    font-weight: 600;
+p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
 }
 
 h4 {
@@ -234,11 +245,11 @@ p {
     padding-top: 76px;
 }
 
-/* HERO OVERLAP SECTION */
+/* HERO IMMERSIVE EXPERIENCE */
 .hero-overlap {
     position: relative;
-    min-height: 140vh;
-    padding-top: 76px;
+    min-height: 100vh;
+    padding-top: 0;
     overflow: hidden;
 }
 
@@ -256,7 +267,7 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: saturate(0.95) contrast(1.08) brightness(0.95);
+    filter: saturate(0.9) contrast(1.1) brightness(0.8);
 }
 
 .hero-gradient-overlay {
@@ -265,23 +276,31 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, 
-        rgba(10, 10, 10, 0.15) 0%,
-        rgba(10, 10, 10, 0.35) 40%,
-        rgba(10, 10, 10, 0.65) 75%,
-        rgba(10, 10, 10, 0.95) 100%);
+    background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.5) 50%,
+        rgba(0, 0, 0, 0.8) 80%,
+        rgba(0, 0, 0, 0.95) 100%);
     mix-blend-mode: multiply;
     z-index: 1;
 }
 
 .navbar-overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: transparent;
-    padding: 1rem 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    padding: 1.5rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-overlay.scrolled {
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(30px);
 }
 
 .navbar-overlay .nav-container {
@@ -316,44 +335,53 @@ p {
 
 .hero-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(4rem, 8vw, 6.5rem);
+    font-size: clamp(5rem, 10vw, 7rem);
     font-weight: 700;
-    line-height: 0.9;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.04em;
+    line-height: 0.85;
+    margin-bottom: 2rem;
+    letter-spacing: -0.05em;
     color: #ffffff;
-    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 6px 40px rgba(0, 0, 0, 0.9);
+    animation: fadeInUp 1.2s ease-out;
 }
 
 .hero-content-overlap .eyebrow {
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.8);
     display: inline-block;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .hero-content-overlap .hero-subtitle {
-    color: rgba(255, 255, 255, 0.95);
-    font-size: 1.15rem;
-    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
     max-width: 700px;
     margin-inline: auto;
-    line-height: 1.7;
-    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+    line-height: 1.6;
+    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.7);
     font-weight: 300;
+    animation: fadeInUp 1s ease-out 0.2s both;
 }
 
 .hero-content-overlap .hero-actions {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease-out 0.4s both;
 }
 
 .hero-content-overlap .hero-stats {
     display: grid;
-    grid-template-columns: repeat(3, minmax(120px, 1fr));
-    gap: 1rem;
-    margin-top: 1.5rem;
+    grid-template-columns: repeat(3, minmax(140px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    animation: fadeInUp 1s ease-out 0.6s both;
 }
 
 .stat {
@@ -387,18 +415,70 @@ p {
 
 .about-card-overlap {
     position: absolute;
-    bottom: -15%;
+    bottom: 0;
     left: 0;
     right: 0;
     z-index: 10;
-    background: rgba(15, 15, 15, 0.97);
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-    backdrop-filter: blur(20px);
-    padding: 4rem 0;
-    margin: 0 2rem;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.98);
+    border-top: 2px solid var(--accent);
+    backdrop-filter: blur(30px);
+    padding: 5rem 0 8rem 0;
+    margin: 0 3rem;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+    animation: slideUp 1.5s ease-out 0.8s both;
+}
+
+.about-centered {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-copy h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 4rem);
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.about-copy p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.highlight-card {
+    background: rgba(212, 175, 55, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.highlight-card:hover {
+    background: rgba(212, 175, 55, 0.08);
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateY(-5px);
+}
+
+.highlight-card h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
 }.selector {
     display: block;
     font-size: 1.6rem;
@@ -934,6 +1014,30 @@ p {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media (max-width: 1024px) {
     .menu-grid,
     .gallery-grid,
