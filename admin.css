@@ -1,22 +1,60 @@
 body {
-  font-family: Arial;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 换个更现代的字体 */
   background: #111;
   color: white;
-  padding: 20px;
+  padding: 40px; /* 增加边距，更有呼吸感 */
+}
+
+h2 {
+  text-align: center;
+  color: #ffcc00; /* 金色标题，符合餐厅高档感 */
+  margin-bottom: 30px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  background: #1a1a1a; /* 稍微比背景浅一点点，增加层次 */
+  border-radius: 8px; /* 圆角增加现代感 */
+  overflow: hidden; /* 配合圆角使用 */
+}
+
+th {
+  background: #333; /* 表头颜色加深 */
+  color: #ffcc00; /* 表头文字用金色 */
+  font-weight: bold;
+  padding: 15px 10px;
+}
+
+td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #333; /* 只需要横向边框，看起来更简洁 */
+  font-size: 14px;
+}
+
+/* 隔行变色：让数据更容易被眼睛追踪 */
+tr:nth-child(even) {
   background: #222;
 }
 
-th, td {
-  padding: 10px;
-  border: 1px solid #444;
-  text-align: center;
+/* 鼠标滑过变色：方便看清当前选中的是哪一行 */
+tr:hover {
+  background: #292929;
+  transition: 0.3s;
 }
 
+/* 删除链接改成按钮样式 */
 a {
-  color: red;
+  color: white;
+  background: #d9534f; /* 柔和的红色 */
+  padding: 6px 12px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+a:hover {
+  background: #c9302c;
+  box-shadow: 0 0 10px rgba(217, 83, 79, 0.5);
 }
