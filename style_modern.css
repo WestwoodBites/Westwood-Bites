@@ -196,11 +196,25 @@ p {
     padding: 0 1.5rem;
 }
 .logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
     text-decoration: none;
-    color: var(--accent);
-    letter-spacing: 0.2em;
+    border-radius: 16px;
+    background: rgba(212,175,55,0.12);
+    transition: background 0.25s ease, transform 0.25s ease;
+    overflow: hidden;
+}
+.logo:hover {
+    background: rgba(212,175,55,0.22);
+    transform: translateY(-1px);
+}
+.logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
 }
 .nav-menu {
     display: flex;
