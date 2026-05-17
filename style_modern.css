@@ -1422,14 +1422,14 @@ p {
 
 .chef-brand-footer {
     display: grid;
-    grid-template-columns: minmax(180px, 220px) 1fr;
-    align-items: end;
-    gap: 1.5rem;
-    min-height: 150px;
+    grid-template-columns: 1fr;
+    align-items: start;
+    justify-items: end;
+    gap: 1.1rem;
 }
 
 .chef-brand-panel .chef-signature {
-    align-self: end;
+    justify-self: end;
 }
 
 .chef-brand-panel .chef-signature img {
@@ -1440,12 +1440,11 @@ p {
 }
 
 .chef-honors {
-    align-self: end;
     justify-self: end;
     display: grid;
     grid-template-columns: repeat(2, minmax(130px, 1fr));
     gap: 1rem;
-    width: min(100%, 360px);
+    width: min(100%, 420px);
     padding-top: 1.1rem;
     border-top: 1px solid rgba(212,175,55,0.22);
 }
