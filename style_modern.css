@@ -1398,7 +1398,9 @@ p {
 
 .chef-brand-panel {
     display: grid;
-    gap: 1.6rem;
+    grid-template-columns: minmax(0, 1.15fr) minmax(240px, 0.85fr);
+    align-items: stretch;
+    gap: 1.75rem;
     margin-top: 2.5rem;
     padding: 2rem;
     background: linear-gradient(135deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025));
@@ -1408,10 +1410,14 @@ p {
 
 .chef-brand-panel .chef-quote {
     margin: 0;
-    padding: 0 0 1.4rem 1.35rem;
+    min-height: 100%;
+    padding: 0.2rem 1.75rem 0.2rem 1.35rem;
     background: transparent;
     border-left: 2px solid var(--accent);
     border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .chef-brand-panel .chef-quote blockquote {
@@ -1423,9 +1429,13 @@ p {
 .chef-brand-footer {
     display: grid;
     grid-template-columns: 1fr;
-    align-items: start;
+    align-content: end;
+    align-items: end;
     justify-items: end;
-    gap: 1.1rem;
+    gap: 1.2rem;
+    min-height: 100%;
+    padding-left: 1.75rem;
+    border-left: 1px solid rgba(212,175,55,0.12);
 }
 
 .chef-brand-panel .chef-signature {
@@ -1442,9 +1452,9 @@ p {
 .chef-honors {
     justify-self: end;
     display: grid;
-    grid-template-columns: repeat(2, minmax(130px, 1fr));
-    gap: 1rem;
-    width: min(100%, 420px);
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    width: min(100%, 300px);
     padding-top: 1.1rem;
     border-top: 1px solid rgba(212,175,55,0.22);
 }
@@ -1476,9 +1486,19 @@ p {
 }
 
 @media (max-width: 768px) {
+    .chef-brand-panel,
     .chef-brand-footer,
     .chef-honors {
         grid-template-columns: 1fr;
+    }
+
+    .chef-brand-footer {
+        padding-left: 0;
+        border-left: none;
+    }
+
+    .chef-brand-panel .chef-quote {
+        padding-right: 0;
     }
 
     .chef-honors {
