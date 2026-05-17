@@ -201,8 +201,8 @@ p {
     /* 强制限制最小高度 */
     min-height: 50px !important; 
     padding: 0 1.5rem;
-    margin-right: 25px !important; /* 👈 每个字的右边空出 25 像素 */
-    margin-left: 25px !important;  /* 👈 每个字的左边空出 25 像素 */
+    margin-right: 50px !important; /* 👈 每个字的右边空出 25 像素 */
+    margin-left: 50px !important;  /* 👈 每个字的左边空出 25 像素 */
 }
 .logo {
     display: inline-flex;
