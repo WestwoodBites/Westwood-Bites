@@ -218,14 +218,14 @@ p {
     text-decoration: none; /* 取消自带的下划线 */
 }
 .logo {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.75rem 1rem;
-    text-decoration: none;
-    border-radius: 16px;
-    background: rgba(212,175,55,0.12);
-    transition: background 0.25s ease, transform 0.25s ease;
+    font-family: 'Cormorant Garamond', serif; /* 使用你引用的高级衬线字体 */
+    font-size: 1.4rem;                        /* 调整字号大小 */
+    font-weight: 600;                         /* 字体的粗细 */
+    letter-spacing: 2px;                      /* 🌟 让字母之间有一点点空隙，会显得非常高级 */
+    color: #ffffff !important;                /* 确保字是纯白色 */
+    text-decoration: none;                    /* 去掉自带的下划线 */
+    text-transform: uppercase;                /* 强制转换成大写 */
+}
 }
 .logo:hover {
     background: rgba(212,175,55,0.22);
