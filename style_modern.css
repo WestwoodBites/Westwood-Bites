@@ -186,7 +186,7 @@ p {
     z-index: 1000;
     background: transparent;
     /* 1. 把原本的 1rem 改小，比如改成 0.5rem，或者直接写具体的像素 */
-    padding: 0.5rem 0; 
+    padding: 0.5rem 0 !important; /* 加上 !important */
 }
 
 .nav-container {
@@ -197,6 +197,7 @@ p {
     /* 2. 把原本的最小高度 76px 改小，比如改成 50px 或 60px */
     min-height: 56px; 
     padding: 0 1.5rem;
+    min-height: 50px !important;  /* 加上 !important */
 }
 .logo {
     display: inline-flex;
