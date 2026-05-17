@@ -1450,4 +1450,102 @@ p {
     color: #8e8e8e;                 /* 颜色稍微调暗一点点，显得更低调 */
     line-height: 1.2;
 }
-、
+/* ==================== 顶部纯文字 LOGO 修复 ==================== */
+.logo {
+    background: transparent !important; /* 强制去掉左上角多余的阴影小方框 */
+    border: none !important;
+    padding: 0 !important;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #ffffff !important;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* ==================== 主厨大长方形板块完美对齐 ==================== */
+.chef-section-container {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important; /* 强行让左右两边高度完全对齐 */
+    max-width: 1000px;
+    margin: 3rem auto;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #121212; /* 确保整体有一个干净的深黑背景 */
+}
+
+.chef-image-box {
+    flex: 1 !important;
+    display: flex !important;
+}
+
+.chef-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important; /* 防止图片变形 */
+}
+
+/* 右侧文字盒子：彻底清除所有旧的重叠框样式 */
+.chef-text-box {
+    flex: 1 !important;
+    background: #121212 !important;
+    padding: 3rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important; /* 寄语在上，荣誉在下，绝不重叠 */
+    border: none !important; /* 去掉多余的旧边框 */
+}
+
+/* 寄语文字样式 */
+.chef-quote {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem !important;
+    color: #e0e0e0 !important;
+    line-height: 1.6 !important;
+    margin: 0 0 1rem 0 !important;
+    background: transparent !important; /* 彻底删掉原本包裹它的灰色方块背景 */
+    padding: 0 !important;
+    border: none !important;
+}
+
+/* 主厨名字样式 */
+.chef-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem !important;
+    color: #ffffff !important;
+    margin: 0 0 2rem 0 !important;
+}
+
+/* 下方的精致荣誉容器 */
+.chef-honors {
+    display: flex !important;
+    justify-content: flex-start !important;
+    gap: 2rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding-top: 1.2rem !important;
+    margin-top: auto !important; /* 强行把它推到右下角 */
+}
+
+.honor-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.6rem !important;
+}
+
+.honor-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem !important;
+    color: #d4af37 !important;
+    line-height: 1 !important;
+}
+
+.honor-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    color: #8e8e8e !important;
+    line-height: 1.2 !important;
+}
