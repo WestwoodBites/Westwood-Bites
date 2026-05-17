@@ -1518,34 +1518,4 @@ p {
     margin: 0 0 2rem 0 !important;
 }
 
-/* 下方的精致荣誉容器 */
-.chef-honors {
-    display: flex !important;
-    justify-content: flex-start !important;
-    gap: 2rem !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-    padding-top: 1.2rem !important;
-    margin-top: auto !important; /* 强行把它推到右下角 */
-}
 
-.honor-item {
-    display: flex !important;
-    align-items: center !important;
-    gap: 0.6rem !important;
-}
-
-.honor-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem !important;
-    color: #d4af37 !important;
-    line-height: 1 !important;
-}
-
-.honor-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.65rem !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    color: #8e8e8e !important;
-    line-height: 1.2 !important;
-}
