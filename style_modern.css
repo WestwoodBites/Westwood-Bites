@@ -300,8 +300,8 @@ p {
     display: flex;
     align-items: center;
     gap: 2.5rem;
-    margin-left: auto;     /* 关键代码：自动填满左侧空间，把菜单往右推 */
-    margin-right: 2rem;
+    margin-left: auto;     /* 💡 核心：自动填满左侧空间，把菜单强行推向最右边 */
+    margin-right: 40px;
 }
 .nav-link:hover,
 .nav-link.active {
