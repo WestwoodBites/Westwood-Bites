@@ -212,7 +212,7 @@ p {
     color: #050505;
 }
 .btn-full {
-    width: 100%;
+    flex: 1;
 }
 .navbar {
     position: fixed;
@@ -240,7 +240,7 @@ p {
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 1rem;
     min-height: 50px !important; 
     padding: 0 1.5rem;
@@ -283,6 +283,9 @@ p {
     align-items: center;
     gap: 2.5rem !important; 
     list-style: none;
+    margin-left: auto;
+    width: 100%;
+    justify-content: flex-end;
 }
 .nav-link {
     color: var(--text);
@@ -1582,42 +1585,6 @@ p {
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
-.language-picker {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55rem;
-    min-height: 38px;
-    padding: 0.45rem 0.75rem;
-    border: 1px solid rgba(212,175,55,0.35);
-    border-radius: 999px;
-    background: var(--card-bg);
-    color: var(--text);
-}
-
-.language-picker-label {
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--accent);
-}
-
-.language-select {
-    width: 8.5rem;
-    max-width: 42vw;
-    border: none;
-    background: transparent;
-    color: var(--text);
-    font: inherit;
-    font-size: 0.72rem;
-    cursor: pointer;
-    outline: none;
-}
-
-.language-select option {
-    background: var(--section-bg);
-    color: var(--text);
-}
 
 .theme-toggle:hover {
     border-color: var(--accent);
@@ -1765,4 +1732,3 @@ p {
     direction: rtl;
     text-align: right;
 }
-
