@@ -281,14 +281,8 @@ p {
     color: var(--text);
     letter-spacing: 0.02em;
 }
+/* 针对你 HTML 中的 <ul class="nav-menu"> */
 .nav-menu {
-   display: flex;
-    align-items: center;
-    gap: 2.5rem !important; 
-    list-style: none;
-    margin-left: auto;
-    width: 100%;
-    justify-content: flex-end;
     display: flex;
     align-items: center;    /* 确保菜单文字、Light键、按钮全部垂直居中对齐 */
     list-style: none;       /* 去掉列表默认的圆点 */
@@ -299,7 +293,13 @@ p {
     gap: 24px;              /* 调整每个菜单项和按钮之间的间距，24px 是一个非常舒服的紧凑比例 */
     
     /* 如果上一层没把你推到最右边，取消下面这行的注释 */
-    /* margin-left: auto; */
+    /* margin-left: auto; */ 
+}
+
+/* 如果你想让右侧的 'Book a Table' 按钮与左边的 'Light' 稍微拉开一点点区别 */
+.nav-menu li:last-child {
+    margin-left: 8px;       /* 让最后一个按钮单独再往右挪动一点，产生视觉层次感 */
+}
 }
 .nav-link {
     color: var(--text);
