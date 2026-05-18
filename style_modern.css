@@ -1869,3 +1869,33 @@ p {
 .chef-quote blockquote {
     color: #8a7355 !important; /* 优雅的深金褐色 */
 }
+/* 整个品牌卡片面板 */
+.chef-brand-panel {
+    background-color: #dfb141; /* 高雅的金黄色背景 */
+    color: #1a1a1a;            /* 主文字换成深色 */
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 左侧引言部分 */
+.chef-quote blockquote {
+    color: #2b2b2b;            /* 深色引言字 */
+    border-left: 2px solid #1a1a1a; /* 左侧竖线变成深色 */
+    padding-left: 15px;
+}
+
+.chef-quote cite {
+    color: #1a1a1a;            /* 署名深色 */
+}
+
+/* 右侧数字与文字 */
+.honor-number {
+    color: #1a1a1a;            /* 数字变成显眼的深色 */
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.honor-text {
+    color: #333333;            /* 说明文字深色 */
+}
