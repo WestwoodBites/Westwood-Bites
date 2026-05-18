@@ -289,6 +289,17 @@ p {
     margin-left: auto;
     width: 100%;
     justify-content: flex-end;
+    display: flex;
+    align-items: center;    /* 确保菜单文字、Light键、按钮全部垂直居中对齐 */
+    list-style: none;       /* 去掉列表默认的圆点 */
+    margin: 0;
+    padding: 0;
+    
+    /* 💡 核心控制：如果你想让它们整体更靠右，并且彼此之间紧密靠拢，就调小这个 gap 值 */
+    gap: 24px;              /* 调整每个菜单项和按钮之间的间距，24px 是一个非常舒服的紧凑比例 */
+    
+    /* 如果上一层没把你推到最右边，取消下面这行的注释 */
+    /* margin-left: auto; */
 }
 .nav-link {
     color: var(--text);
@@ -302,6 +313,9 @@ p {
     gap: 2.5rem;
     margin-left: auto;     /* 💡 核心：自动填满左侧空间，把菜单强行推向最右边 */
     margin-right: 40px;
+}
+.nav-menu li:last-child {
+    margin-left: 8px;       /* 让最后一个按钮单独再往右挪动一点，产生视觉层次感 */
 }
 .nav-link:hover,
 .nav-link.active {
