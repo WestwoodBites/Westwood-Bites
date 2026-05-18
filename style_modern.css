@@ -1840,3 +1840,13 @@ p {
     border-left: 3px solid #b89551; /* 图中那条标志性的金线条 */
     padding-left: 25px;
 }
+/* 强行把这个提交按钮的文字颜色改为亮黄色 */
+.btn-primary.btn-full {
+    color: #FFD700 !important; /* #FFD700 是标准的纯正金色/黄色 */
+}
+
+/* 可选：如果你希望鼠标悬停在按钮上时，文字和背景有个炫酷的互动变色 */
+.btn-primary.btn-full:hover {
+    background: #FFD700 !important;
+    color: #111 !important; /* 鼠标放上去时背景变黄，文字变黑 */
+}
