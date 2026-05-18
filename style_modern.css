@@ -1582,6 +1582,42 @@ p {
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
+.language-picker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    min-height: 38px;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid rgba(212,175,55,0.35);
+    border-radius: 999px;
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+.language-picker-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.language-select {
+    max-width: 110px;
+    border: none;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    font-size: 0.72rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.language-select option {
+    background: var(--section-bg);
+    color: var(--text);
+}
+
 .theme-toggle:hover {
     border-color: var(--accent);
     background: var(--accent-soft);
@@ -1712,5 +1748,20 @@ p {
 
 :root[data-theme="light"] .card-overlay {
     background: linear-gradient(180deg, transparent 30%, rgba(23,19,13,0.72));
+}
+
+:root[dir="rtl"] .nav-menu,
+:root[dir="rtl"] .hero-actions,
+:root[dir="rtl"] .menu-meta,
+:root[dir="rtl"] .footer-content,
+:root[dir="rtl"] .reservation-content,
+:root[dir="rtl"] .chef-content {
+    direction: rtl;
+}
+
+:root[dir="rtl"] .detail,
+:root[dir="rtl"] .honor-item {
+    direction: rtl;
+    text-align: right;
 }
 
