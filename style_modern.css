@@ -225,6 +225,9 @@ p {
     display: none;
     height: 60px; 
     line-height: 60px; 
+    display: flex;
+    justify-content: space-between; /* Logo在最左，右侧盒子在最右 */
+    align-items: center;
 }
 
 .navbar-overlay {
@@ -298,7 +301,7 @@ p {
     align-items: center;
     gap: 2.5rem;
     margin-left: auto;     /* 关键代码：自动填满左侧空间，把菜单往右推 */
-    margin-right: 10rem;
+    margin-right: 2rem;
 }
 .nav-link:hover,
 .nav-link.active {
