@@ -1751,3 +1751,35 @@ p {
     direction: rtl;
     text-align: right;
 }
+/* 1. 确保导航栏容器占满 100% 宽度，不限制死宽度 */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 100%; /* 防止被 max-width 限制在中间 */
+    padding: 0 40px; /* 左右留出 40px 的边距，不让按钮直接撞到屏幕最右边缘 */
+    box-sizing: border-box;
+}
+
+/* 2. 强行把菜单推向最右边 */
+.nav-menu {
+    display: flex !important; /* 强制启用 flex 布局 */
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    margin-left: auto; /* 💡 核心：这行代码会吃掉左边所有多余的空间，把菜单死死顶到右边 */
+    
+    /* 控制 Home, About, Menu 彼此之间的紧凑间距 */
+    gap: 20px; 
+}
+
+/* 3. 如果你的代码里有针对 .nav-toggle（手机端三根线菜单图标）的样式，
+   在电脑端大屏幕下，必须确保它是隐藏的，否则它会占地方 */
+@media (min-width: 769px) {
+    .nav-toggle {
+        display: none !important;
+    }
+}
