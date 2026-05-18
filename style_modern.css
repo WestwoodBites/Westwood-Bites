@@ -1809,3 +1809,34 @@ p {
     /* 如果你觉得 Home, About 之间还是太散，可以把 24px 改小（比如 16px） */
     gap: 24px !important; 
 }
+/* ==================== 修复主厨引言文字看不见的问题 ==================== */
+
+/* 强制让引言里的文字变成深色（比如暗炭黑色），在浅色背景下就能看清了 */
+.chef-quote blockquote {
+    color: #1a1a1a !important; /* 你也可以根据设计改成其他深色，比如 #2c2c2c */
+    font-size: 1.1rem;         /* 适当微调字号大小 */
+    line-height: 1.6;
+    margin-bottom: 15px;       /* 让文字和下面的作者名字拉开一点距离 */
+}
+
+/* 如果你想让这段名言使用更高级的低饱和度暗金色，可以用下面这个颜色 */
+/* .chef-quote blockquote {
+    color: #8a7355 !important; 
+}
+*/
+.chef-brand-panel {
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    justify-content: space-between; /* 左右两端对齐 */
+    gap: 40px; /* 左右两块之间的间距 */
+    background: #fff; /* 确保卡片是白色背景 */
+    padding: 30px;
+    border-radius: 12px;
+}
+
+/* 左侧名言部分占满左边剩余空间，并且加一条左边框 */
+.chef-quote {
+    flex: 1;
+    border-left: 3px solid #b89551; /* 图中那条标志性的金线条 */
+    padding-left: 25px;
+}
