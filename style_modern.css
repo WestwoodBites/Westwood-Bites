@@ -1783,3 +1783,29 @@ p {
         display: none !important;
     }
 }
+/* ==================== 终极强行靠右修复 ==================== */
+
+/* 1. 解除导航栏容器的宽度和居中限制 */
+.nav-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    
+    width: 100% !important;     /* 强行撑满整行屏幕 */
+    max-width: 100% !important; /* 解除类似 1200px 的最大宽度限制 */
+    margin: 0 !important;       /* 取消自动居中 */
+    
+    /* 左右各留 5% 的呼吸空间，防止 Logo 和按钮直接撞到屏幕两边的最边缘 */
+    padding: 0 5% !important;   
+    box-sizing: border-box !important;
+}
+
+/* 2. 确保菜单内部的元素紧凑排列，并靠右对齐 */
+.nav-menu {
+    display: flex !important;
+    align-items: center !important;
+    margin-left: auto !important; /* 强制吃掉左侧所有空白，推向最右 */
+    
+    /* 如果你觉得 Home, About 之间还是太散，可以把 24px 改小（比如 16px） */
+    gap: 24px !important; 
+}
