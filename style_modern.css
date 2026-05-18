@@ -1850,3 +1850,22 @@ p {
     background: #FFD700 !important;
     color: #111 !important; /* 鼠标放上去时背景变黄，文字变黑 */
 }
+/* ==================== 修复深色模式下荣誉文字变白的问题 ==================== */
+
+/* 1. 强制把右侧 12+ 和 03 旁边的说明文字改成深色（浅色背景适用） */
+.chef-honors .honor-text {
+    color: #2c2c2c !important; /* 暗灰色，确保看得清 */
+    font-weight: 500;          /* 稍微加粗一点，更有质感 */
+}
+
+/* 2. 如果你想让这些文字也跟整体设计一样，变成低调的深金褐色，可以用下面这行： */
+/*
+.chef-honors .honor-text {
+    color: #8a7355 !important; 
+}
+*/
+
+/* 3. 顺便确保左侧名言在任何模式下都是看得清的深色/深金色 */
+.chef-quote blockquote {
+    color: #8a7355 !important; /* 优雅的深金褐色 */
+}
