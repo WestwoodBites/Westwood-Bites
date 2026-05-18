@@ -787,6 +787,15 @@ p {
     color: var(--accent);
     font-size: 1rem;
 }
+.detail-icon {
+    width: 52px;
+    height: 52px;
+    padding: 0.35rem;
+    border: 1px solid rgba(212,175,55,0.22);
+    border-radius: 18px;
+    background: rgba(212,175,55,0.08);
+    box-shadow: 0 14px 34px rgba(0,0,0,0.16);
+}
 .detail h4 {
     margin-bottom: 0.35rem;
 }
