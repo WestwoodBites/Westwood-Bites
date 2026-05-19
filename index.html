@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -75,6 +75,48 @@
         </div>
     </div>
 </section>
+
+<!-- Reservation Success Screen -->
+<div id="reservation-success-overlay" class="reservation-success-overlay" style="display: none;">
+    <div class="reservation-success-content">
+        <div class="reservation-checkmark">
+            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+        </div>
+        <h2 class="reservation-success-title">Your dining experience awaits</h2>
+        <p class="reservation-success-subtitle">Your table is being prepared with care.</p>
+        <div id="reservation-summary-card" class="reservation-summary-card">
+            <div class="summary-header">
+                <h3>Reservation Confirmed</h3>
+                <p id="summary-reservation-id"></p>
+            </div>
+            <div class="summary-details">
+                <div class="summary-item">
+                    <span>Guest</span>
+                    <p id="summary-name"></p>
+                </div>
+                <div class="summary-item">
+                    <span>Date</span>
+                    <p id="summary-date"></p>
+                </div>
+                <div class="summary-item">
+                    <span>Time</span>
+                    <p id="summary-time"></p>
+                </div>
+                <div class="summary-item">
+                    <span>Guests</span>
+                    <p id="summary-guests"></p>
+                </div>
+            </div>
+        </div>
+        <div class="reservation-success-actions">
+            <a href="#menu" class="btn btn-secondary">View Menu</a>
+            <a href="#home" class="btn btn-primary">Return Home</a>
+        </div>
+    </div>
+</div>
 
 <!-- About Section -->
 <section id="about" class="about-section">
