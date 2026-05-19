@@ -2224,3 +2224,39 @@ p {
     width: 100%;
     z-index: 10; /* 数字比视频和遮罩层大即可 */
 }
+/* 强行让首页大容器占满全屏 */
+#home.hero-overlap {
+    position: relative !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: hidden !important;
+    display: block !important; /* 防止 flex 布局强制分栏 */
+}
+
+/* 强行让背景容器铺满 */
+#home .hero-background {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: -1 !important; /* 确保它在最底层 */
+}
+
+/* 强行让里面的视频本身填满且不变形 */
+#home .hero-background video {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover !important; /* 核心：裁切并填满 */
+    transform: translate(-50%, -50%) !important; /* 居中放大 */
+}
+
+/* 确保右边那个原本的米色区块（或者其他文字内容）不会遮挡视频 */
+/* 如果你希望内容浮在视频上面，需要提升层级 */
+#home > *:not(.hero-background) {
+    position: relative !important;
+    z-index: 2 !important;
+}
