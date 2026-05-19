@@ -1,5 +1,8 @@
 /* Immersive Black & Gold Restaurant Experience */
 :root {
+    --font-primary: 'Inter', sans-serif;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-title: 'Playfair Display', serif;
     color-scheme: dark;
     --bg: #000000;
     --surface: rgba(0, 0, 0, 0.95);
@@ -43,6 +46,54 @@
     --field-bg: rgba(255,255,255,0.04);
     --subtle-line: rgba(255,255,255,0.08);
     --button-text: #050505;
+}
+
+/* ===== CUSTOM CURSOR & PARALLAX ===== */
+body {
+    cursor: none;
+}
+
+.cursor-dot, .cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 10000;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent);
+    transition: transform 0.1s ease-out;
+}
+
+.cursor-follower {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--accent);
+    transition: transform 0.3s ease-out, opacity 0.3s ease;
+}
+
+.parallax-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.light-follower {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.06) 0%, rgba(255, 215, 0, 0) 60%);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.2s ease-out;
 }
 
 /* ===== VIDEO INTRO SECTION ===== */
@@ -155,12 +206,19 @@ button, .btn {
 }
 
 /* ===== LUXURIOUS TYPOGRAPHY ===== */
+h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+}
+
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cinzel', serif;
     font-weight: 400;
     line-height: 1.2;
     color: var(--text-primary);
     letter-spacing: -0.02em;
+}
+
+h1 {
+    font-family: var(--font-title);
 }
 
 h1 {
@@ -184,7 +242,7 @@ h3 {
 }
 
 p {
-    font-family: 'Cinzel', serif;
+    font-family: var(--font-primary);
     font-weight: 300;
     line-height: 1.7;
     color: var(--text-secondary);
@@ -295,7 +353,7 @@ p {
     font-size: 1.4rem;
     font-weight: 600;
     letter-spacing: 2px;
-    color: #ffffff !important;
+    color: var(--text-primary);
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -406,12 +464,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg,
-        rgba(0, 0, 0, 0.3) 0%,
-        rgba(0, 0, 0, 0.5) 50%,
-        rgba(0, 0, 0, 0.8) 80%,
-        rgba(0, 0, 0, 0.95) 100%);
-    mix-blend-mode: multiply;
+    background: var(--hero-overlay);
     z-index: 1;
 }
 
@@ -470,7 +523,7 @@ p {
     line-height: 0.85;
     margin-bottom: 2rem;
     letter-spacing: -0.05em;
-    color: #ffffff;
+    color: var(--text-primary);
     text-shadow: 0 6px 40px rgba(0, 0, 0, 0.9);
     animation: fadeInUp 1.2s ease-out;
 }
@@ -486,7 +539,7 @@ p {
 }
 
 .hero-content-overlap .hero-subtitle {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-secondary);
     font-size: 1.25rem;
     margin-bottom: 3rem;
     max-width: 700px;
@@ -540,7 +593,7 @@ p {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: rgba(242, 242, 242, 0.7);
+    color: var(--text-muted);
 }
 
 .about-centered {
@@ -2289,4 +2342,234 @@ p {
     position: relative !important;
     z-index: 2 !important;
 }
-/* 控制 Logo 图片的大小，使其完美嵌入导航栏 */
+/* ==========================================================================
+   DARK MODE ADAPTATION (暗黑模式文字与卡片可见度优化)
+   ========================================================================== */
+
+/* 1. 当开启暗黑模式时，确保文字容器能显现，并且文字变成亮色 */
+.dark-mode .hero-content-overlap {
+    color: #fcf9f2 !important; /* 统一改成你们网站标志性的高级米白色 */
+}
+
+/* 2. 标题文字改成纯白，或者带一点点高级的亮金色 */
+.dark-mode .hero-title {
+    color: #ffffff !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* 增加阴影增强可读性 */
+}
+
+/* 3. 副标题文字变成稍淡一丢丢的浅灰色，方便阅读 */
+.dark-mode .hero-subtitle {
+    color: #e0dbd1 !important;
+}
+
+/* 4. 下方 12、60+、4.9/5 数据卡片的适配 */
+.dark-mode .hero-stats .stat {
+    background: rgba(255, 255, 255, 0.08) !important; /* 给卡片一个非常淡的半透明白色背景 */
+    border: 1px solid rgba(255, 255, 255, 0.15) !important; /* 加上淡淡的边框，让卡片在全黑背景下有轮廓 */
+    backdrop-filter: blur(10px); /* 磨砂玻璃效果，让卡片看起来更高档 */
+}
+
+/* 5. 卡片内部的数字和标签文字 */
+.dark-mode .stat .stat-number {
+    color: #d4af37 !important; /* 数字依然保持你们标志性的高贵金色 */
+}
+
+.dark-mode .stat .stat-label {
+    color: #cccccc !important; /* 标签文字换成浅灰色，确保能清晰看见 */
+}
+
+/* 6. 额外保险：如果你的按钮文字在深色模式下也看不清，可以加上这个 */
+.dark-mode .btn-secondary {
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+/* ==========================================================================
+   万能暗黑模式文字与卡片可见度修复
+   ========================================================================== */
+
+/* 同时适配 .dark, .dark-mode, .dark-theme 和 data-theme */
+.dark .hero-content-overlap,
+.dark-mode .hero-content-overlap,
+.dark-theme .hero-content-overlap,
+[data-theme="dark"] .hero-content-overlap {
+    opacity: 1 !important; /* 强行让容器可见 */
+    color: #ffffff !important;
+}
+
+/* 1. 强行把大标题换成纯白色 */
+.dark .hero-title,
+.dark-mode .hero-title,
+.dark-theme .hero-title,
+[data-theme="dark"] .hero-title {
+    color: #ffffff !important;
+    mix-blend-mode: normal !important; /* 防止奇特的颜色混合导致隐形 */
+}
+
+/* 2. 强行把副标题长文章变成亮灰色 */
+.dark .hero-subtitle,
+.dark-mode .hero-subtitle,
+.dark-theme .hero-subtitle,
+[data-theme="dark"] .hero-subtitle {
+    color: #f0e6df !important;
+}
+
+/* 3. 强行修复下方三个卡片的背景（白边磨砂玻璃感） */
+.dark .hero-stats .stat,
+.dark-mode .hero-stats .stat,
+.dark-theme .hero-stats .stat,
+[data-theme="dark"] .hero-stats .stat {
+    background: rgba(255, 255, 255, 0.15) !important; /* 提高白色的不透明度 */
+    border: 1px solid rgba(255, 255, 255, 0.3) !important; /* 强化边框 */
+}
+
+/* 4. 卡片里面的数字变成亮金色，标签变成亮白色 */
+.dark .stat .stat-number,
+.dark-mode .stat .stat-number,
+.dark-theme .stat .stat-number,
+[data-theme="dark"] .stat .stat-number {
+    color: #e5b842 !important;
+}
+
+.dark .stat .stat-label,
+.dark-mode .stat .stat-label,
+.dark-theme .stat .stat-label,
+[data-theme="dark"] .stat .stat-label {
+    color: #ffffff !important;
+}
+/* ==========================================================================
+   万能【白天模式 (Light Mode)】文字隐形修复
+   ========================================================================== */
+
+/* 无论你的白天模式类名是 .light、.light-mode 还是属性 data-theme="light" */
+.light .hero-content-overlap,
+.light-mode .hero-content-overlap,
+.light-theme .hero-content-overlap,
+[data-theme="light"] .hero-content-overlap {
+    opacity: 1 !important;
+    color: #ffffff !important; /* 强行变白 */
+}
+
+/* 1. 大标题强行变成纯白 */
+.light .hero-title,
+.light-mode .hero-title,
+.light-theme .hero-title,
+[data-theme="light"] .hero-title {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important; /* 防止部分浏览器内核强制填充黑色 */
+}
+
+/* 2. 副标题长文章变成米白色 */
+.light .hero-subtitle,
+.light-mode .hero-subtitle,
+.light-theme .hero-subtitle,
+[data-theme="light"] .hero-subtitle {
+    color: #e0dbd1 !important;
+}
+
+/* 3. 下方三个卡片背景修复（高亮磨砂玻璃感） */
+.light .hero-stats .stat,
+.light-mode .hero-stats .stat,
+.light-theme .hero-stats .stat,
+[data-theme="light"] .hero-stats .stat {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* 4. 卡片里的数字变成高亮金，标签变成亮白 */
+.light .stat .stat-number,
+.light-mode .stat .stat-number,
+.light-theme .stat .stat-number,
+[data-theme="light"] .stat .stat-number {
+    color: #f1c40f !important; /* 明亮的金色 */
+}
+
+.light .stat .stat-label,
+.light-mode .stat .stat-label,
+.light-theme .stat .stat-label,
+[data-theme="light"] .stat .stat-label {
+    color: #ffffff !important;
+}
+/* ==========================================================================
+   WESTWOOD BITES - 终极暗黑模式【文字全覆盖】可见度修复
+   ========================================================================== */
+
+/* 无论你的暗黑模式类名是 .dark、.dark-mode、.dark-theme 还是属性 [data-theme="dark"] 
+   这里把所有可能性全部打包，强行将所有潜在的隐形文字染成高亮色 */
+
+.dark .hero-content-overlap,
+.dark-mode .hero-content-overlap,
+.dark-theme .hero-content-overlap,
+[data-theme="dark"] .hero-content-overlap,
+.dark #home,
+.dark-mode #home,
+[data-theme="dark"] #home {
+    color: #ffffff !important;
+}
+
+/* 1. 顶部的超小标题 (Sophisticated Dining Experience) 强行变亮金色 */
+.dark .eyebrow,
+.dark-mode .eyebrow,
+.dark-theme .eyebrow,
+[data-theme="dark"] .eyebrow {
+    color: #e5b842 !important;
+    -webkit-text-fill-color: #e5b842 !important;
+}
+
+/* 2. 大标题 (Westwood Bites) 强行变成纯白 */
+.dark .hero-title,
+.dark-mode .hero-title,
+.dark-theme .hero-title,
+[data-theme="dark"] .hero-title {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.8) !important; /* 加上文字阴影，防止视频亮色时看不清 */
+}
+
+/* 3. 副标题长文章描述强行变成米白色 */
+.dark .hero-subtitle,
+.dark-mode .hero-subtitle,
+.dark-theme .hero-subtitle,
+[data-theme="dark"] .hero-subtitle {
+    color: #e0dbd1 !important;
+    -webkit-text-fill-color: #e0dbd1 !important;
+}
+
+/* 4. 下方三个数据卡片的背景与文字（12, 60+, 4.9/5） */
+.dark .hero-stats .stat,
+.dark-mode .hero-stats .stat,
+.dark-theme .hero-stats .stat,
+[data-theme="dark"] .hero-stats .stat {
+    background: rgba(255, 255, 255, 0.12) !important; /* 半透明白色背景磨砂感 */
+    border: 1px solid rgba(255, 255, 255, 0.25) !important; /* 浅色边框 */
+}
+
+.dark .stat .stat-number,
+.dark-mode .stat .stat-number,
+[data-theme="dark"] .stat .stat-number {
+    color: #e5b842 !important; /* 数字变金 */
+    -webkit-text-fill-color: #e5b842 !important;
+}
+
+.dark .stat .stat-label,
+.dark-mode .stat .stat-label,
+[data-theme="dark"] .stat .stat-label {
+    color: #ffffff !important; /* 标签变白 */
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* 5. 强行修复按钮文字（Explore Our Menu 等二级按钮） */
+.dark .btn-secondary,
+.dark-mode .btn-secondary,
+[data-theme="dark"] .btn-secondary,
+.dark .btn,
+.dark-mode .btn {
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* 6. 如果导航栏文字也看不到了，强行让导航链接变亮 */
+.dark .nav-link,
+.dark-mode .nav-link,
+[data-theme="dark"] .nav-link {
+    color: #fcf9f2 !important;
+}
