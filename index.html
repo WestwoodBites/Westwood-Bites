@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿<!DOCTYPE html>
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -59,7 +59,7 @@
         <div class="hero-gradient-overlay"></div>
     </div>
     
-    <div class="hero-content-overlap" style="opacity: 0; transition: opacity 1s ease-in-out;">
+    <div class="hero-content-overlap initially-hidden">
         <h1 class="hero-title">Westwood Bites</h1>
         <p class="hero-subtitle">Where culinary artistry meets unforgettable moments. Experience the perfect blend of tradition and innovation in the heart of Kuala Lumpur.</p>
         <div class="hero-actions">
@@ -619,7 +619,7 @@
         const heroBackground = document.querySelector('.hero-background');
 
         video.addEventListener('ended', function() {
-            heroContent.style.opacity = '1';
+            heroContent.classList.remove('initially-hidden');
             heroBackground.style.backgroundImage = "url('westwood bites_24.jpeg')";
             video.style.display = 'none';
         });
