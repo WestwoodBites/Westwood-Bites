@@ -39,12 +39,12 @@ themeToggle?.addEventListener('click', () => {
 });
 
 function closeMobileNav() {
-    navMenu?.classList.remove('open');
+    navMenu?.classList.remove('active');
     navToggle?.classList.remove('active');
 }
 
 navToggle?.addEventListener('click', () => {
-    navMenu?.classList.toggle('open');
+    navMenu?.classList.toggle('active');
     navToggle.classList.toggle('active');
 });
 
