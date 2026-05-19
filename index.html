@@ -1,4 +1,4 @@
-﻿﻿﻿﻿<!DOCTYPE html>
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
     <meta name="description" content="An immersive fine dining experience in Kuala Lumpur with a modern digital menu, seamless reservations, and elegant storytelling.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script>
         const savedTheme = localStorage.getItem('westwood-theme');
@@ -18,23 +18,29 @@
     <link rel="stylesheet" href="style_modern.css">
 </head>
 <body>
-   <nav class="navbar-overlay">
-        <div class="nav-container">
-         
-           <a href="#home" class="logo">WESTWOOD BITES</a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu">
-                <li><a href="#video-intro" class="nav-link">Video</a></li>
-                <li><a href="#home" class="nav-link active">Home </a></li>
-                <li><a href="#about" class="nav-link">About </a></li>
-                <li><a href="#menu" class="nav-link">Menu </a></li>
-                <li><a href="#gallery" class="nav-link">Gallery </a></li>
-                <li><a href="#reservation" class="nav-link">Reserve </a></li>
-                <li>
+    <div class="cursor-dot"></div>
+    <div class="cursor-follower"></div>
+
+    <div class="parallax-container">
+        <div class="light-follower"></div>
+    </div>
+
+    <nav class="navbar-overlay">
+        <div class="nav-container">
+         
+           <a href="#home" class="logo">WESTWOOD BITES</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home </a></li>
+                <li><a href="#about" class="nav-link">About </a></li>
+                <li><a href="#menu" class="nav-link">Menu </a></li>
+                <li><a href="#gallery" class="nav-link">Gallery </a></li>
+                <li><a href="#reservation" class="nav-link">Reserve </a></li>
+                <li>
                     <button class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
                         <span class="theme-toggle-icon" aria-hidden="true"></span>
                         <span class="theme-toggle-text">Light</span>
@@ -45,16 +51,15 @@
         </div>
     </nav>
 
-   
     <section id="home" class="hero-overlap">
     <div class="hero-background">
-        <video autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1543353071-873f17a7a088?w=1600&auto=format&fit=crop&q=80">
-            <source src="https://player.vimeo.com/external/370362195.sd.mp4?s=e90dcaba73c19e0e36f03406b47bbd6ab7a0c4e6&profile_id=165" type="video/mp4">
+        <video id="bg-video" autoplay muted playsinline preload="metadata" poster="https://images.unsplash.com/photo-1543353071-873f17a7a088?w=1600&auto=format&fit=crop&q=80">
+            <source src="video/westwood bites video 3.mp4" type="video/mp4">
         </video>
         <div class="hero-gradient-overlay"></div>
     </div>
     
-    <div class="hero-content-overlap">
+    <div class="hero-content-overlap" style="opacity: 0; transition: opacity 1s ease-in-out;">
         <span class="eyebrow">Sophisticated Dining Experience</span>
         <h1 class="hero-title">Westwood Bites</h1>
         <p class="hero-subtitle">Where culinary artistry meets unforgettable moments. Experience the perfect blend of tradition and innovation in the heart of Kuala Lumpur.</p>
@@ -608,6 +613,19 @@
 <p>&copy; 2026 Westwood Bites</p>
 <a href="admin.php" style="color: #888; text-decoration: none; font-size: 10px;">Staff Login</a>
 </footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const video = document.getElementById('bg-video');
+        const heroContent = document.querySelector('.hero-content-overlap');
+        const heroBackground = document.querySelector('.hero-background');
+
+        video.addEventListener('ended', function() {
+            heroContent.style.opacity = '1';
+            heroBackground.style.backgroundImage = "url('westwood bites_24.jpeg')";
+            video.style.display = 'none';
+        });
+    });
+</script>
 <script src="app_modern.js"></script>
 </body>
 </html>
