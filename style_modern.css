@@ -2289,3 +2289,15 @@ p {
     position: relative !important;
     z-index: 2 !important;
 }
+/* 控制 Logo 图片的大小，使其完美嵌入导航栏 */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-logo-img {
+    height: 45px; /* 这里可以根据你的导航栏高度自由微调，比如 40px 或 50px */
+    width: auto;  /* 宽度自动按比例缩放，保证不拉伸变形 */
+    object-fit: contain;
+}
