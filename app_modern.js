@@ -83,17 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const splashVideo = document.getElementById('splash-video');
     const homeContent = document.getElementById('home');
 
-    if (splashVideo) {
+    if (splashVideo && splashScreen && homeContent) {
         splashVideo.addEventListener('ended', () => {
-            if (splashScreen) {
-                splashScreen.style.opacity = '0';
-                setTimeout(() => {
-                    splashScreen.style.display = 'none';
-                }, 1000); // Match the CSS transition duration
-            }
-            if (homeContent) {
-                homeContent.style.opacity = '1';
-            }
+            splashScreen.style.display = 'none';
+            homeContent.style.display = 'block';
         });
     }
 });
