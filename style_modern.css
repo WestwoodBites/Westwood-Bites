@@ -483,7 +483,7 @@ p {
 
 .navbar-overlay.scrolled {
     background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(10px);
 }
 
 .navbar-overlay .nav-container {
