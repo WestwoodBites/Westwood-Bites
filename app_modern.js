@@ -1,3 +1,18 @@
+// Scroll-reveal animation for the footer
+const footer = document.querySelector('.site-footer');
+
+const footerObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            footer.classList.add('is-visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+if (footer) {
+    footerObserver.observe(footer);
+}
 // Restaurant website interactions without language translation
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
