@@ -13,6 +13,25 @@ const themeToggleText = document.querySelector('.theme-toggle-text');
 const root = document.documentElement;
 const aboutParallax = document.querySelector('.about-parallax');
 
+// ===== PREMIUM MOUSE EFFECTS =====
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorFollower = document.querySelector('.cursor-follower');
+const lightFollower = document.querySelector('.light-follower');
+
+window.addEventListener('mousemove', e => {
+    const { clientX: x, clientY: y } = e;
+
+    if (cursorDot) {
+        cursorDot.style.transform = `translate(${x}px, ${y}px)`;
+    }
+    if (cursorFollower) {
+        cursorFollower.style.transform = `translate(${x - 15}px, ${y - 15}px)`;
+    }
+    if (lightFollower) {
+        lightFollower.style.transform = `translate(${x - 400}px, ${y - 400}px)`;
+    }
+});
+
 function applyTheme(theme) {
     if (theme === 'light') {
         root.dataset.theme = 'light';
