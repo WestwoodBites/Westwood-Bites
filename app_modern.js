@@ -78,6 +78,26 @@ const observer = new IntersectionObserver((entries) => {
 
 fadeElements.forEach(el => observer.observe(el));
 
+document.addEventListener('DOMContentLoaded', () => {
+    const splashScreen = document.getElementById('splash-screen');
+    const splashVideo = document.getElementById('splash-video');
+    const homeContent = document.getElementById('home');
+
+    if (splashVideo) {
+        splashVideo.addEventListener('ended', () => {
+            if (splashScreen) {
+                splashScreen.style.opacity = '0';
+                setTimeout(() => {
+                    splashScreen.style.display = 'none';
+                }, 1000); // Match the CSS transition duration
+            }
+            if (homeContent) {
+                homeContent.style.opacity = '1';
+            }
+        });
+    }
+});
+
 menuFilters.forEach(btn => {
     btn.addEventListener('click', () => {
         const filter = btn.dataset.category || 'all';
