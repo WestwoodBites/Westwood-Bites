@@ -230,10 +230,15 @@ if (bookingForm) {
         const formData = new FormData(bookingForm);
         const submitButton = bookingForm.querySelector('button[type="submit"]');
         const originalText = submitButton?.textContent || 'Confirm Reservation';
+        const reservationOverlay = document.getElementById('reservation-success-overlay');
+        const reservationContent = reservationOverlay.querySelector('.reservation-success-content');
 
-        if (bookingMessage) {
-            bookingMessage.textContent = 'Booking...';
-            bookingMessage.style.color = 'var(--accent)';
+        // Show loading animation
+        if (reservationOverlay) {
+            reservationOverlay.style.display = 'flex';
+            setTimeout(() => {
+                reservationOverlay.style.opacity = '1';
+            }, 10);
         }
 
         if (submitButton) {
@@ -243,17 +248,37 @@ if (bookingForm) {
 
         try {
             const response = await fetch('data.php', { method: 'POST', body: formData });
-            const result = await response.text();
+            const result = await response.json();
 
-            if (bookingMessage) {
-                bookingMessage.textContent = result;
-                bookingMessage.style.color = result.toLowerCase().includes('success') ? 'var(--accent)' : '#f65b5b';
+            if (result.status === 'success') {
+                // Populate summary card
+                document.getElementById('summary-reservation-id').textContent = `ID: ${result.reservation_id}`;
+                document.getElementById('summary-name').textContent = result.name;
+                document.getElementById('summary-date').textContent = result.date;
+                document.getElementById('summary-time').textContent = result.time;
+                document.getElementById('summary-guests').textContent = result.guests;
+
+                // Show success screen
+                if (reservationContent) {
+                    setTimeout(() => {
+                        reservationContent.style.opacity = '1';
+                        reservationContent.style.transform = 'scale(1)';
+                    }, 500);
+                }
+            } else {
+                // Handle error
+                if (reservationOverlay) {
+                    reservationOverlay.style.display = 'none';
+                    reservationOverlay.style.opacity = '0';
+                }
+                alert(result.message);
             }
         } catch (error) {
-            if (bookingMessage) {
-                bookingMessage.textContent = 'Something went wrong. Please try again or contact us directly.';
-                bookingMessage.style.color = '#f65b5b';
+            if (reservationOverlay) {
+                reservationOverlay.style.display = 'none';
+                reservationOverlay.style.opacity = '0';
             }
+            alert('Something went wrong. Please try again or contact us directly.');
             console.error(error);
         }
 
