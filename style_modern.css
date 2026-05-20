@@ -2869,3 +2869,37 @@ html[data-theme="dark"] .logo .logo-dark {
     display: flex;
     align-items: center;
 }
+/* ==========================================================================
+   Westwood Bites - 完美适配你现有 JS 的 Logo 同位置互换
+   ========================================================================== */
+
+/* 1. 统一设置两张 Logo 的基础大小 */
+.logo .logo-img {
+    height: 75px !important; /* 在这里调整你的 Logo 统一高度 */
+    width: auto !important;
+    display: block;
+}
+
+/* 2. 默认状态（白天模式 Light Mode） */
+/* 当 html 标签的 data-theme 为 light 时，显示亮色 Logo，彻底隐藏暗色 Logo */
+html[data-theme="light"] .logo .logo-light {
+    display: block !important;
+}
+html[data-theme="light"] .logo .logo-dark {
+    display: none !important; /* 彻底隐藏且不占用空间 */
+}
+
+/* 3. 互换状态（黑暗模式 Dark Mode） */
+/* 当 html 标签的 data-theme 为 dark 时，白天 Logo 隐藏，暗色 Logo 在同位置顶替出现 */
+html[data-theme="dark"] .logo .logo-light {
+    display: none !important; /* 彻底隐藏白天 Logo，让出空间 */
+}
+html[data-theme="dark"] .logo .logo-dark {
+    display: block !important; /* 瞬间在同一个地方显示黑夜 Logo */
+}
+
+/* 4. 保持 Logo 在导航栏垂直居中 */
+.logo {
+    display: flex;
+    align-items: center;
+}
