@@ -393,7 +393,7 @@ p {
 .nav-link {
     color: var(--text);
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     font-weight: 500;
     opacity: 0.9;
     transition: color 0.25s ease, opacity 0.25s ease;
@@ -2675,17 +2675,13 @@ p {
 [data-theme="dark"] .nav-link {
     color: #fcf9f2 !important;
 }
-
-
-/*new code */
-
 .logo {
     display: flex;
     align-items: center;
 }
 
 .logo-img {
-    height: 80px; /* Adjust this height to match your navbar's design */
+    height: 40px; /* Adjust this height to match your navbar's design */
     width: auto;  /* Keeps the image aspect ratio perfectly intact */
     display: block;
 }
