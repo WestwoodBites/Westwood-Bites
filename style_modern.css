@@ -2903,3 +2903,46 @@ html[data-theme="dark"] .logo .logo-dark {
     display: flex;
     align-items: center;
 }
+/* ==========================================================================
+   Westwood Bites - Logo 超级放大且不撑开导航栏（直接覆盖到最底部）
+   ========================================================================== */
+
+/* 1. 强行放大 Logo 图片 */
+.logo .logo-img {
+    height: 110px !important;    /* 🌟 把高度从 75px 放大到 110px（你可以根据需要继续调大） */
+    width: auto !important;
+    display: block;
+    
+    /* 🌟 核心魔术：使用负的上下 margin，允许大 Logo 视觉上溢出，但不撑大导航栏 */
+    margin-top: -20px !important;  
+    margin-bottom: -20px !important;
+    
+    /* 可选：加一点阴影让溢出的 Logo 更有立体感、更高级 */
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.15)); 
+}
+
+/* 2. 限制导航栏容器，死死锁住它的高度，绝对不让它变大 */
+.nav-container {
+    height: 70px !important;      /* 🌟 显式锁定导航栏高度为 70px（可以根据你的实际需求微调） */
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 3. 保持 Logo 链接区域居中，并允许里面的大图片溢出显示 */
+.logo {
+    display: flex;
+    align-items: center;
+    overflow: visible !important;  /* 🌟 确保放大的 Logo 不会被切断 */
+    height: 100%;
+}
+
+/* 4. 白天模式自动互换 */
+html[data-theme="light"] .logo .logo-light { display: block !important; }
+html[data-theme="light"] .logo .logo-dark  { display: none !important; }
+
+/* 5. 黑暗模式自动互换 */
+html[data-theme="dark"] .logo .logo-light  { display: none !important; }
+html[data-theme="dark"] .logo .logo-dark   { display: block !important; }
