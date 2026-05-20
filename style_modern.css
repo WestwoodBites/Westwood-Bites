@@ -2804,3 +2804,35 @@ body[data-theme="dark"] .logo .logo-dark,
     padding-top: 0.5rem !important;
     padding-bottom: 0.5rem !important;
 }
+/* ==========================================================================
+   Westwood Bites - Logo 尺寸与同位置完美切换逻辑
+   ========================================================================== */
+
+/* 1. 限制 Logo 的大小（你可以把 75px 改成你想要的任意高度） */
+.logo .logo-img {
+    height: 75px !important;
+    width: auto !important;
+    display: block;
+}
+
+/* 2. 默认状态（白天模式）：显示亮色 Logo，彻底隐藏暗色 Logo */
+.logo .logo-light {
+    display: block !important;
+}
+.logo .logo-dark {
+    display: none !important; /* 隐藏且不占用任何网页空间 */
+}
+
+/* 3. 黑暗模式状态：当 html 标签带有 [data-theme="dark"] 时 */
+html[data-theme="dark"] .logo .logo-light {
+    display: none !important; /* 彻底隐藏白天 Logo，让出空间 */
+}
+html[data-theme="dark"] .logo .logo-dark {
+    display: block !important; /* 瞬间在同一个地方显示黑暗 Logo */
+}
+
+/* 4. 保持 Logo 垂直居中 */
+.logo {
+    display: flex;
+    align-items: center;
+}
