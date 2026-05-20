@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿<!DOCTYPE html>
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,10 +19,14 @@
 </head>
 <body>
     <audio loop autoplay>
-        <source src="westwood-bites-background-music.mp3.mpeg" type="audio/mpeg">
+        <source src="westwood bites background music.mp3" type="audio/mpeg">
     </audio>
     <div class="cursor-dot"></div>
     <div class="cursor-follower"></div>
+
+    <button id="music-toggle" class="music-toggle" aria-label="Toggle Music">
+        <i class="fas fa-music"></i>
+    </button>
 
     <div class="parallax-container">
         <div class="light-follower"></div>
@@ -579,5 +583,45 @@
     });
 </script>
 <script src="app_modern.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const audio = document.querySelector('audio');
+        const musicToggle = document.getElementById('music-toggle');
+
+        // Function to sync button UI with audio state
+        const syncMusicState = () => {
+            if (audio.paused) {
+                musicToggle.classList.remove('playing');
+            } else {
+                musicToggle.classList.add('playing');
+            }
+        };
+
+        // Initial state handling
+        const savedState = localStorage.getItem('musicPlaying');
+        if (savedState === 'false') {
+            audio.pause();
+        } else {
+            // Let autoplay attribute handle it, or try to play if it fails (e.g., on some browsers)
+            audio.play().catch(() => {});
+        }
+        syncMusicState(); // Set initial button state
+
+        // Toggle functionality
+        musicToggle.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                localStorage.setItem('musicPlaying', 'true');
+            } else {
+                audio.pause();
+                localStorage.setItem('musicPlaying', 'false');
+            }
+        });
+
+        // Keep UI in sync if audio state changes for other reasons
+        audio.addEventListener('play', syncMusicState);
+        audio.addEventListener('pause', syncMusicState);
+    });
+</script>
 </body>
 </html>
