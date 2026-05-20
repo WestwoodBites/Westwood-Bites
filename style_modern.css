@@ -1,3 +1,30 @@
+
+/* Signature Dish Section */
+.signature-dish {
+    padding: 6rem 0;
+    background: #0a0a0a;
+}
+
+.signature-dish-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.signature-dish-text h2 {
+    color: var(--accent-gold);
+}
+
+.signature-dish-text p {
+    margin-bottom: 1.5rem;
+}
+
+.signature-dish-video video {
+    width: 100%;
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-medium);
+}
 /* Immersive Black & Gold Restaurant Experience */
 :root {
     --font-primary: 'Inter', sans-serif;
