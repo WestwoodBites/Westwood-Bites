@@ -2685,7 +2685,7 @@ p {
 }
 
 .logo-img {
-    height: 40px; /* Adjust this height to match your navbar's design */
+    height: 80px; /* Adjust this height to match your navbar's design */
     width: auto;  /* Keeps the image aspect ratio perfectly intact */
     display: block;
 }
