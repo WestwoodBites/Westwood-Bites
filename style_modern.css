@@ -2702,3 +2702,25 @@ p {
     white-space: nowrap;
     border: 0;
 }
+/* ==========================================================================
+   Westwood Bites - Custom Logo Size Override
+   ========================================================================== */
+
+/* Makes the image logo larger */
+.logo-img {
+    height: 75px !important; /* Adjust this number (e.g., 80px, 90px) to make it even bigger */
+    width: auto !important;  /* Prevents the logo from stretching weirdly */
+    display: block;
+}
+
+/* Centers the logo vertically with the navigation links */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Balances the header padding so the larger logo has breathing room */
+.nav-container {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
