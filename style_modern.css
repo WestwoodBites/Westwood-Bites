@@ -2757,3 +2757,50 @@ p {
     padding-top: 0.5rem !important;
     padding-bottom: 0.5rem !important;
 }
+/* ==========================================================================
+   Westwood Bites - 终极多模式 Logo 切换（直接覆盖到最底部）
+   ========================================================================== */
+
+/* 1. 统一设置两张 Logo 的基础大小 */
+.logo .logo-img {
+    height: 75px !important;
+    width: auto !important;
+    display: block;
+}
+
+/* 2. 默认状态（白天模式）：显示白天 Logo，隐藏黑暗 Logo */
+.logo .logo-light {
+    display: block !important;
+}
+.logo .logo-dark {
+    display: none !important;
+}
+
+/* 3. 黑暗模式状态（多重判定防失效）：强制让 light 隐藏，dark 显示 */
+/* 判定方式 A：检查 html 标签是否有 data-theme="dark" */
+html[data-theme="dark"] .logo .logo-light,
+/* 判定方式 B：如果你的 JS 把属性加在 body 上（备用） */
+body[data-theme="dark"] .logo .logo-light,
+/* 判定方式 C：如果主题切换按钮的字变成了 "Dark"（终极备用） */
+.theme-toggle[aria-pressed="true"] ~ .logo .logo-light {
+    display: none !important;
+}
+
+html[data-theme="dark"] .logo .logo-dark,
+body[data-theme="dark"] .logo .logo-dark,
+.theme-toggle[aria-pressed="true"] ~ .logo .logo-dark {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* 4. 优化导航栏布局与间距 */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
