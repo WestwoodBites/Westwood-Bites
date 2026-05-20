@@ -2836,3 +2836,36 @@ html[data-theme="dark"] .logo .logo-dark {
     display: flex;
     align-items: center;
 }
+/* ==========================================================================
+   Westwood Bites - Logo 同位置互换核心逻辑
+   ========================================================================== */
+
+/* 1. 限制 Logo 的大小（高度可根据需求调整） */
+.logo .logo-img {
+    height: 75px !important;
+    width: auto !important;
+    display: block;
+}
+
+/* 2. 默认（Light Mode）：显示白天 Logo，彻底隐藏黑夜 Logo */
+.logo .logo-light {
+    display: block !important;
+}
+.logo .logo-dark {
+    display: none !important;
+}
+
+/* 3. 当 HTML 标签被加上 data-theme="dark" 时（Dark Mode） */
+/* 白天 Logo 蒸发隐藏，黑夜 Logo 瞬间在原地显示 */
+html[data-theme="dark"] .logo .logo-light {
+    display: none !important;
+}
+html[data-theme="dark"] .logo .logo-dark {
+    display: block !important;
+}
+
+/* 4. 让 Logo 保持在导航栏垂直居中 */
+.logo {
+    display: flex;
+    align-items: center;
+}
