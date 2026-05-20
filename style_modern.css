@@ -2720,3 +2720,40 @@ p {
     padding-top: 0.5rem !important;
     padding-bottom: 0.5rem !important;
 }
+/* ==========================================================================
+   Westwood Bites - 多模式 Logo 尺寸与切换逻辑（加在文件最底部）
+   ========================================================================== */
+
+/* 1. 统一设置两张 Logo 的基础大小 */
+.logo-img {
+    height: 75px !important; /* 在这里调整你的 Logo 统一高度 */
+    width: auto !important;
+    display: block;
+}
+
+/* 2. 默认状态（白天模式）：显示白天 Logo，隐藏黑暗 Logo */
+.logo-light {
+    display: block !important;
+}
+.logo-dark {
+    display: none !important;
+}
+
+/* 3. 当触发黑暗模式时：隐藏白天 Logo，显示黑暗 Logo */
+[data-theme="dark"] .logo-light {
+    display: none !important;
+}
+[data-theme="dark"] .logo-dark {
+    display: block !important;
+}
+
+/* 4. 优化导航栏布局与间距 */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
